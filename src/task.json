@@ -1,0 +1,32 @@
+{
+    "Tasks":[
+        {
+            "Title":"Task 1",
+            "Responsable": "Jose Roa",
+            "Description": "Some quick example text to build on the card's content. 1",
+            "EstimatedTime": "5 days",
+            "Priority": "Low"
+        },
+        {
+            "Title":"Task 2",
+            "Responsable": "Andrea F",
+            "Description": "Some quick example up the bulk of the card's content. 2",
+            "EstimatedTime": "3 days",
+            "Priority": "Medium"
+        },
+        {
+            "Title":"Task 3",
+            "Responsable": "Felipe Anderson",
+            "Description": "Some quick example text to build on the ca card's content. 3",
+            "EstimatedTime": "10 days",
+            "Priority": "Low"
+        },
+        {
+            "Title":"Task 4",
+            "Responsable": "Maria C",
+            "Description": "Some quick example text to build on the card trd's content. 4",
+            "EstimatedTime": "1 days",
+            "Priority": "High"
+        }
+    ]
+}
