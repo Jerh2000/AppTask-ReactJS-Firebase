@@ -1,38 +1,45 @@
 import React, { Component } from "react";
 import logo from "../../logo.svg";
 import "./App.css";
-import FormTask from "../FormTask/FormTask";
-import Task from "../Task/Task";
-import Navigation from "../Navigation/Navigation";
+
+import FormTask from "../FormTask/FormTask.jsx";
+import Task from "../Task/Task.jsx";
+import Navigation from "../Navigation/Navigation.jsx";
+
+import "firebase/database";
+import app from "../../Config/config";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       tasks: [
-        {
-          taskID: 1,
-          taskTitle: "Task 1",
-          taskAuthor: "NN",
-          taskDescription: "Tarea de limpiar",
-          taskEstimatedTime: "5",
-          taskPriority: "high",
-        },
-        {
-          taskID: 2,
-          taskTitle: "Task 2",
-          taskAuthor: "FF",
-          taskDescription: "Tarea de comer",
-          taskEstimatedTime: "1",
-          taskPriority: "Medium",
-        },
-      ],
+        
+      ]
     };
+    
+    this.db = app.database().ref().child("tasks");
     this.addTask = this.addTask.bind(this);
   }
+
+  componentDidMount() {
+    const { tasks } = this.state;
+    this.db.on("child_added",snap => {
+      tasks.push({
+        taskID: snap.key,
+        taskTitle: snap.val().taskTitle,
+        taskAuthor: snap.val().taskAuthor,
+        taskDescription: snap.val().taskDescription,
+        taskEstimatedTime: snap.val().taskEstimatedTime,
+        taskPriority: snap.val().taskPriority
+      });
+      this.setState({tasks});
+    });
+  }
+
   removeTask() {}
 
-  addTask(item1,item2,item3,item4,item5) {
+  addTask(item1, item2, item3, item4, item5) {
     let { tasks } = this.state;
     tasks.push({
       taskID: tasks.length + 1,
@@ -42,7 +49,7 @@ class App extends Component {
       taskEstimatedTime: item3,
       taskPriority: item5,
     });
-    this.setState({tasks});
+    this.setState({ tasks });
   }
 
   render() {
