@@ -4,14 +4,13 @@ import { Tasks } from "../../task.json";
 class Navigation extends Component {
   constructor(props) {
     super(props);
-    this.Count = props.count;
   }
   render() {
     return (
       <div className="sticky-top">
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <a className="navbar-brand" href="#">
-            Home <span className="badge badge-light">{this.Count}</span>
+            Home 
           </a>
 
           <button
