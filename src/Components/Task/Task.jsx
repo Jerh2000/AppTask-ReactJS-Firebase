@@ -13,7 +13,7 @@ class Task extends Component {
     this.taskPriority = props.OntaskPriority;
   }
   handleRemove(id) {
-    console.log(id);
+    this.props.OnremoveTask(id);
   }
   render() {
     return (
