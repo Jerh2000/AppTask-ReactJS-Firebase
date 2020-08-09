@@ -15,7 +15,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,4 +42,23 @@
   background: -webkit-linear-gradient(to right, #CB3066, #16BFFD);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #CB3066, #16BFFD); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   
+}
+
+
+.scrollers{
+  height: 475px;
+  overflow: auto;
+  border-radius: 15px;
+  
+}
+
+.scrollers::-webkit-scrollbar{
+  width: 5px;
+  border-radius: 15px;
+}
+
+.scrollers::-webkit-scrollbar-thumb{
+  background-color: #00ff9d;
+  
+  border-radius: 15px;
 }
